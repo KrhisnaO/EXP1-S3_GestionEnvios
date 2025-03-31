@@ -6,12 +6,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+//CONTROLADOR REST PARA GESTIONAR LOS ENVIOS INTERNACIONALES
+//ENDPOINTS PARA CONSULTAR LOS ENVIOS DE LA BBDD EN MEMORIA
 @RestController
 @RequestMapping("/envios")
 
 public class EnvioController {
     private final EnvioService envioService;
 
+    //CONSTRUCTOR DEL CONTROLADOR QUE INYECTA EL SERVICIO DE ENVIOS
     public EnvioController(EnvioService envioService) {
         this.envioService = envioService;
     }

@@ -5,9 +5,16 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+//SERVICIO QUE GESTIONA LOS ENVIOS INTERNACIONALES
+//PERMITE OBTENER LA LISTA DE ENVIOS Y BUSCAR ENVIOS POR SU NUMERO DE SEGUIMIENTO
+
 @Service
 public class EnvioService {
+
+    ///LISTA EN MEMORIA QUE SIMULA LA BBDD DE ENVIOS
     private final List<Envio> envios = new ArrayList<>();
+
+    //CONSTRUCTOR QUE INICIALIZA ALGUNOS ENVIOS DE EJEMPLO
 
     public EnvioService() {
         envios.add(new Envio(1, "Carlos Pérez", "DHL", "Chile", "España", 
@@ -51,13 +58,14 @@ public class EnvioService {
             "2025-03-30", "2025-04-07"));
     }
     
-    //OBTENER TODOS LOS ENVIOS DE LA BBDD EN MEMORIA
+    //OBTIENE LA LISTA COMPLETA DE TODOS LOS ENVIOS DE LA BBDD EN MEMORIA
     public List<Envio> getEnvios(){
         return envios;
     }
 
 
     //OBTENER ENVIOS POR SU NUMERO DE SEGUIMIENTO
+    //SI NO ENCUENTRA, DEVUELVE UN OBJETO INDICANDO QUE NO HA SIDO ENCONTRADO 
     public Envio getEnvioBynumeroSeguimiento(int numeroSeguimiento) {
         return envios.stream()
         .filter(envio -> envio.getNumeroSeguimiento() == numeroSeguimiento )

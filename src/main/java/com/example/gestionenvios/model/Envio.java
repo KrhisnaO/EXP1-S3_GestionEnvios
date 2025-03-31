@@ -12,6 +12,8 @@ public class Envio {
     private String fechaEstimadaLlegada;
 
 
+
+    //CONSTRUCTOR DE LA CLASE ENVIO
     public Envio(int numeroSeguimiento, String destinatario, String empresaEnvio, 
                  String paisOrigen, String paisDestino, String ubicacionActual, 
                  String estado, String fechaSalida, String fechaEstimadaLlegada) {
@@ -28,6 +30,8 @@ public class Envio {
     }
 
 
+
+    //METODOS GETTER PARA ACCEDER A LOS ATRIBUTOS
     public int getNumeroSeguimiento(){
         return numeroSeguimiento;
     }
